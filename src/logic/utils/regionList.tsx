@@ -1,0 +1,83 @@
+export const RegionList = {
+  saanenland: {
+    title: "Saanenland",
+    children: [
+      "1657 Abländschen",
+      "3777 Saanenmöser",
+      "3778 Schönried",
+      "3780 Gstaad",
+      "3781 Turbach",
+      "3782 Lauenen b. Gstaad",
+      "3783 Grund b. Gstaad",
+      "3784 Feutersoey",
+      "3785 Gsteig b. Gstaad",
+      "3792 Saanen",
+    ],
+  },
+  pays_denhaut: {
+    title: "Pays d'Enhaut",
+    children: [
+      "1658 Rossinière",
+      "1659 Flendruz",
+      "1659 Rougemont",
+      "1660 Château-d'Oex",
+      "1660 L'Etivaz",
+      "1660 La Lécherette",
+      "1660 Les Moulins",
+    ],
+  },
+  niedersimmental: {
+    title: "Niedersimmental",
+    children: [
+      "3700 Spiez",
+      "3702 Hondrich",
+      "3752 Wimmis",
+      "3753 Oey",
+      "3754 Diemtigen",
+      "3755 Horboden",
+      "3756 Zwischenflüh",
+      "3757 Schwenden im Diemtigtal",
+      "3758 Latterbach",
+      "3762 Erlenbach im Simmental",
+      "3765 Oberwil im Simmental",
+      "3763 Därstetten",
+      "3764 Weissenburg",
+    ],
+  },
+  obersimmental: {
+    title: "Obersimmental",
+    children: [
+      "3766 Boltigen",
+      "3770 Zweisimmen",
+      "3771 Blankenburg",
+      "3772 St. Stephan",
+      "3773 Matten (St. Stephan)",
+      "3775 Lenk im Simmental",
+      "3776 Oeschseite",
+    ],
+  },
+  ormont_dessus: {
+    title: "Ormont Dessus",
+    children: [
+      "1862 La Comballaz",
+      "1862 Les Mosses",
+      "1863 Le Sépey",
+      "1864 Vers-l'Eglise",
+      "1865 Les Diablerets",
+      "1866 La Forclaz VD",
+    ],
+  },
+  haute_intyamont: {
+    title: "Haute-Intyamont",
+    children: [
+      "1669 Montbovon",
+      "1669 Albeuve",
+      "1669 Lessoc",
+      "1669 Neirivue",
+    ],
+  },
+  other: {
+    title: "Other",
+    children: [],
+  },
+};

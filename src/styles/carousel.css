@@ -1,0 +1,41 @@
+/* Custom CSS */
+.ant-carousel .slick-prev,
+.ant-carousel .slick-next {
+  color: #000; /* Change arrow color */
+  /* font-size: 30px; Optional: Adjust arrow size */
+  opacity: 1; /* Ensure visibility */
+}
+
+.slick-next::after,
+.slick-prev::after {
+  width: 18px !important; /* Adjust arrow width */
+  height: 18px !important; /* Adjust arrow height */
+}
+
+/* @media screen and (max-width: 768px) {
+  .ant-carousel .slick-prev,
+  .ant-carousel .slick-next {
+    display: none !important;
+  }
+} */
+
+.play-icon {
+  /* transform: translate(-50%, -50%); */
+  font-size: 30px; /* Adjust icon size */
+  color: white;
+  border-radius: 50%;
+  border: 1px solid #000;
+  /* border: none; */
+}
+
+.play-icon:hover {
+  transform: translate(0, -10%);
+  transition: all 0.3s ease-in-out;
+}
+
+.prev {
+  transform: rotate(180deg);
+}
+.prev:hover {
+  transform: translate(0, -10%) rotate(180deg);
+}

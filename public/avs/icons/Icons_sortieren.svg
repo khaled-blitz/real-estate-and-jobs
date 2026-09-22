@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 60 60">
+  <!-- Generator: Adobe Illustrator 29.2.1, SVG Export Plug-In . SVG Version: 2.1.0 Build 116)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: none;
+      }
+
+      .st1 {
+        fill: #3f3c41;
+      }
+
+      .st2 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="st0" width="60" height="60"/>
+    </clipPath>
+  </defs>
+  <g class="st2">
+    <path class="st1" d="M18.89,40.03h-2.34v2.34h2.34v-2.34ZM21.23,35.35h-4.68v2.34h4.68v-2.34ZM23.57,30.67h-7.02v2.17h7.02v-2.17ZM25.91,25.99h-9.36v2.17h9.36v-2.17ZM28.25,21.14h-11.7v2.34h11.7v-2.34ZM36.61,21.64v21.9h2.34v-21.9l2.95,2.83,1.55-1.55-5.73-5.78-5.78,5.78c-.03.2,1.32,1.67,1.71,1.55l2.96-2.82ZM30.59,16.46h-14.04v2.34h14.04v-2.34Z"/>
+    <path class="st1" d="M36.61,21.64l-2.96,2.83c-.39.12-1.75-1.35-1.71-1.55l5.78-5.78,5.73,5.78-1.55,1.55-2.95-2.83v21.9h-2.34v-21.9Z"/>
+  </g>
+  <rect class="st1" x="16.55" y="16.46" width="14.04" height="2.34"/>
+  <rect class="st1" x="16.55" y="21.14" width="11.7" height="2.34"/>
+  <rect class="st1" x="16.55" y="25.99" width="9.36" height="2.17"/>
+  <rect class="st1" x="16.55" y="30.67" width="7.02" height="2.17"/>
+  <rect class="st1" x="16.55" y="35.35" width="4.68" height="2.34"/>
+  <rect class="st1" x="16.55" y="40.03" width="2.34" height="2.34"/>
+</svg>

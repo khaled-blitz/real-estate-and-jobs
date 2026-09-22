@@ -1,0 +1,323 @@
+[
+    {
+        "action": "add",
+        "data": {
+            "label": {
+                "default": "real_estate_offer"
+            },
+            "attributes": {
+                "price": {
+                    "type": "float",
+                    "label": "price"
+                },
+                "expiration_date": {
+                    "type": "datetime",
+                    "label": "expiration_date"
+                },
+                "name": {
+                    "type": "varchar",
+                    "label": "name"
+                },
+                "auto_renew": {
+                    "type": "boolean",
+                    "label": "auto_renew"
+                },
+                "features": {
+                    "type": "json",
+                    "label": "features"
+                }
+            },
+            "_objectpermission": "20",
+            "defaultobjectpermission": 30,
+            "modelpermission": null,
+            "objectpermissionoptions": [
+                "0",
+                "10",
+                "20",
+                "30",
+                "40",
+                "50"
+            ],
+            "hassort": "1",
+            "hasexpiration": null,
+            "haspublishingdate": null,
+            "_blitzID": "bdt24qme4c3_real_estate_offer"
+        },
+        "model": "_Model",
+        "blitzstamp": 125126110,
+        "hash": "22hvxa-1ds6rs9",
+        "userhash": "24qme4c3"
+    },
+    {
+        "action": "add",
+        "data": {
+            "attributes": {
+                "title": {
+                    "type": "varchar",
+                    "label": "title"
+                },
+                "image_local": {
+                    "type": "image",
+                    "label": "image_local"
+                },
+                "description": {
+                    "type": "varchar",
+                    "label": "description"
+                },
+                "expiration_date": {
+                    "type": "datetime",
+                    "label": "expiration_date"
+                },
+                "email": {
+                    "type": "email",
+                    "label": "email"
+                },
+                "display_email": {
+                    "type": "email",
+                    "label": "display_email"
+                },
+                "url": {
+                    "type": "url",
+                    "label": "url"
+                },
+                "phone_number": {
+                    "type": "phone",
+                    "label": "phone_number"
+                },
+                "address": {
+                    "type": "location",
+                    "label": "address"
+                },
+                "zipcode": {
+                    "type": "varchar",
+                    "label": "zipcode"
+                },
+                "street": {
+                    "type": "varchar",
+                    "label": "street"
+                },
+                "city": {
+                    "type": "varchar",
+                    "label": "city"
+                },
+                "subcategory": {
+                    "type": "enum",
+                    "label": "subcategory",
+                    "options": [
+                        "TS",
+                        "TR",
+                        "TB",
+                        "STS",
+                        "STR",
+                        "STB"
+                    ]
+                },
+                "number_of_rooms": {
+                    "type": "enum",
+                    "label": "number_of_rooms",
+                    "options": [
+                        "1.0",
+                        "1.5",
+                        "2.0",
+                        "2.5",
+                        "3.0",
+                        "3.5",
+                        "4.0",
+                        "4.5",
+                        "5.0",
+                        "5.5",
+                        "6.0",
+                        "6.5",
+                        "7.0",
+                        "7.5",
+                        "8.0"
+                    ]
+                },
+                "property_type": {
+                    "type": "enum",
+                    "label": "property_type",
+                    "options": [
+                        "Apartment",
+                        "House",
+                        "Chalet",
+                        "Garage/Parking",
+                        "Land/Plot",
+                        "Storage",
+                        "Commercial",
+                        "Agriculture",
+                        "Other Property Type"
+                    ]
+                },
+                "country": {
+                    "type": "varchar",
+                    "label": "country"
+                },
+                "minimum_term": {
+                    "type": "varchar",
+                    "label": "minimum_term"
+                },
+                "price": {
+                    "type": "float",
+                    "label": "price"
+                },
+                "area": {
+                    "type": "float",
+                    "label": "area"
+                },
+                "features": {
+                    "type": [
+                        "enum"
+                    ],
+                    "label": "Features",
+                    "options": [
+                        "garden",
+                        "balcony",
+                        "furnished",
+                        "garage",
+                        "outdoor_parking",
+                        "pets_allowed",
+                        "seating_area",
+                        "elevator",
+                        "cellar",
+                        "attic",
+                        "cable_tv",
+                        "wheelchair_accessible",
+                        "child_friendly",
+                        "electric_car_charging_station",
+                        "new_construction",
+                        "alpine_and_forecourt_hut",
+                        "second_home",
+                        "minergie_standard"
+                    ]
+                },
+                "gallery": {
+                    "type": [
+                        "image"
+                    ],
+                    "label": "Gallery"
+                },
+                "price_cold_rent": {
+                    "type": "float",
+                    "label": "price_cold_rent"
+                },
+                "price_charges": {
+                    "type": "float",
+                    "label": "price_charges"
+                },
+                "source": {
+                    "type": "varchar",
+                    "label": "source"
+                },
+                "offer_fk": {
+                    "type": "bdt24qme4c3_real_estate_offer",
+                    "label": "offer_fk"
+                },
+                "is_approved": {
+                    "type": "boolean",
+                    "label": "is_approved"
+                },
+                "fusion_record_fk": {
+                    "type": "bdt24qme4c3_adfusionaddata",
+                    "label": "fusion_record_fk"
+                },
+                "stripe_session": {
+                    "type": "varchar",
+                    "label": "stripe_session"
+                },
+                "payment_status": {
+                    "type": "enum",
+                    "label": "payment_status",
+                    "options": [
+                        "paid",
+                        "pending",
+                        "free"
+                    ]
+                },
+                "year_of_construction": {
+                    "type": "varchar",
+                    "label": "year_of_construction",
+                    "index": "none"
+                },
+                "last_renovation": {
+                    "type": "varchar",
+                    "label": "last_renovation",
+                    "index": "none"
+                },
+                "insert_internet_link": {
+                    "type": "varchar",
+                    "label": "insert_internet_link",
+                    "index": "none"
+                },
+                "insert_link_name": {
+                    "type": "varchar",
+                    "label": "insert_link_name",
+                    "index": "none"
+                },
+                "company_published": {
+                    "type": "varchar",
+                    "label": "company_published",
+                    "index": "none"
+                },
+                "property_area": {
+                    "type": "varchar",
+                    "label": "property_area",
+                    "index": "none"
+                },
+                "name_published": {
+                    "type": "varchar",
+                    "label": "name_published",
+                    "index": "none"
+                }
+            },
+            "haspublishingdate": "1",
+            "hasexpiration": "1",
+            "defaultobjectpermission": 20,
+            "_objectpermission": 65,
+            "modelpermission": 30,
+            "objectpermissionoptions": [
+                "20",
+                "40",
+                "50"
+            ],
+            "_blitzID": "bdt24qme4c3_real_estate_ads",
+            "hasadditionalattributes": 1
+        },
+        "hash": "0b8096713",
+        "model": "_Model",
+        "blitzstamp": "1",
+        "userhash": "24qme4c3"
+    },
+    {
+        "action": "add",
+        "data": {
+            "label": {
+                "default": "real_estate_config"
+            },
+            "attributes": {
+                "auto_approve_ads": {
+                    "type": "boolean",
+                    "label": "auto_approve_ads"
+                }
+            },
+            "_objectpermission": "20",
+            "defaultobjectpermission": 30,
+            "modelpermission": null,
+            "objectpermissionoptions": [
+                "0",
+                "10",
+                "20",
+                "30",
+                "40",
+                "50"
+            ],
+            "hassort": "1",
+            "hasexpiration": null,
+            "haspublishingdate": null,
+            "_blitzID": "bdt24qme4c3_real_estate_config"
+        },
+        "model": "_Model",
+        "blitzstamp": 130663328,
+        "hash": "25skgw-pcncdf",
+        "userhash": "24qme4c3"
+    }
+]

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 60 60">
+  <!-- Generator: Adobe Illustrator 29.2.1, SVG Export Plug-In . SVG Version: 2.1.0 Build 116)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: none;
+      }
+
+      .st1 {
+        fill: #3f3c41;
+      }
+
+      .st2 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="st0" width="60" height="60"/>
+    </clipPath>
+  </defs>
+  <g class="st2">
+    <path class="st1" d="M44.7,40.69h-2.01v2h2.01v-2ZM41.36,40.69h-2.67v2h2.67v-2ZM37.35,40.69h-2.67v2h2.67v-2ZM33.34,40.69h-2.67v2h2.67v-2ZM29.33,40.69h-2.67v2h2.67v-2ZM25.32,40.69h-2.67v2h2.67v-2ZM21.31,40.69h-2.67v2h2.67v-2ZM17.3,40.69h-2.01v2h2.01v-2ZM44.7,20.64H15.29v18.72h29.41v-18.72ZM44.7,17.3h-2.01v2h2.01v-2ZM41.36,17.3h-2.67v2h2.67v-2ZM37.35,17.3h-2.67v2h2.67v-2ZM33.34,17.3h-2.67v2h2.67v-2ZM29.33,17.3h-2.67v2h2.67v-2ZM25.32,17.3h-2.67v2h2.67v-2ZM21.31,17.3h-2.67v2h2.67v-2ZM17.3,17.3h-2.01v2h2.01v-2ZM45.86,16.15c.06.06.11.18.16.26v27.19c-.09.2-.22.33-.42.42H14.4c-.2-.09-.33-.22-.42-.42v-27.19c.09-.2.22-.33.42-.42h31.2c.08.05.19.1.26.16"/>
+    <path class="st1" d="M28,27.22v5.57l4.68-2.81-4.68-2.76ZM34.49,29.52c.27.27.25.72-.02.99l-7.01,4.17c-.51.02-.76-.18-.81-.69-.23-2.56.17-5.44,0-8.03.02-.48.52-.79.97-.58l6.87,4.13Z"/>
+  </g>
+</svg>
