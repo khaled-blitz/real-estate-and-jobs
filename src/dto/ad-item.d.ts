@@ -6,10 +6,13 @@ export interface ImageType {
 
 export interface TOffer {
   _blitzID?: string;
+  _localID?: string;
   name: string;
   price: string;
   auto_renew: boolean;
   duration: string;
+  /** A paid offer with top set is what makes an approved ad a Top ad. */
+  top?: string;
 }
 
 export type TFeaturesList =
@@ -77,7 +80,8 @@ export interface TAdItem {
   features_list?: FeatureItem[];
   source?: string;
   is_approved?: boolean;
-  offer_fk?: TOffer;
+  /** A raw read hands back the offer's id; a resolved one, the offer itself. */
+  offer_fk?: TOffer | string;
   property_area?: string;
   year_of_construction?: string;
   last_renovation?: string;
