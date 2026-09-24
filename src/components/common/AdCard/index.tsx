@@ -24,7 +24,13 @@ const AdCard = ({ ad, isAdmin = false }: { ad: TAdItem; isAdmin: boolean }) => {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full relative">
+      {/* Says why this ad is at the front. The rule lives in ListControl. */}
+      {context.isTopAd(ad) && (
+        <span className="absolute top-0 left-0 z-10 bg-[#444444] text-white text-sm font-bold px-3 py-1 rounded-tl-[15px] rounded-br-[15px]">
+          Top
+        </span>
+      )}
       <Card
         className={classNames(
           "overflow-hidden w-full border-0 outline-2 outline-[#EBEBEB] outline rounded-[15px]",

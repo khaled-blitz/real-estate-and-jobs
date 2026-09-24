@@ -3,7 +3,7 @@ import type { BDModel, Condition } from "blitzdata.ts";
 import { ReactNode, useEffect, useState } from "react";
 import { createContext } from "react";
 import { ComparisonOperator, TCondition } from "./dto/condition-item";
-import { getBDModel } from "./logic/utils/helpers";
+import { getBDModel, isPaidTopOffer } from "./logic/utils/helpers";
 import { AdFusionModelName, OfferModelName } from "./logic/utils/constants";
 import { TAdItem, TOffer } from "./dto/ad-item";
 import { RegionList } from "./logic/utils/regionList";
@@ -24,9 +24,6 @@ import { RegionList } from "./logic/utils/regionList";
  * at start-up and matched by id.
  */
 
-const isSetFlag = (value: unknown) =>
-  value === "1" || value === 1 || value === true;
-
 /**
  * Every id a paid Top offer answers to. An ad's offer_fk stores the offer's
  * _localID — the same join apps/realestateadmin/mylistings.controller.php
@@ -44,7 +41,7 @@ const fetchTopOfferIDs = async (): Promise<Set<string>> => {
       []) as unknown as TOffer[];
 
     for (const offer of offers) {
-      if (!isSetFlag(offer.top) || !(Number(offer.price) > 0)) continue;
+      if (!isPaidTopOffer(offer)) continue;
       for (const id of [offer._localID, offer._blitzID]) {
         if (id !== undefined && id !== null && id !== "") ids.add(String(id));
       }
@@ -79,6 +76,8 @@ interface ListControlContextType {
   ) => void;
   setConditions: (conditions: TCondition[]) => void;
   setSortingKey: (key: keyof TAdItem) => void;
+  /** Whether the ad runs on a paid Top offer. Owns the rule; cards only render it. */
+  isTopAd: (ad: TAdItem) => boolean;
   showMore: (() => void) | undefined;
   onUpdate: (item: TAdItem) => void;
 }
@@ -101,6 +100,8 @@ const ListControlProvider = ({ children }: ListControlProviderProps) => {
   const [sortingKey, setSorting] = useState<keyof TAdItem>("_blitzstamp");
   const [isDesc, setIsDesc] = useState<boolean>(true);
   const [topOfferIDs, setTopOfferIDs] = useState<Set<string>>(new Set());
+
+  const isTopAd = (ad: TAdItem) => topOfferIDs.has(offerIDOf(ad));
 
   useEffect(() => {
     (async () => {
@@ -170,8 +171,6 @@ const ListControlProvider = ({ children }: ListControlProviderProps) => {
         const otherExists = hasOtherFilter && !allRegions.includes(region);
         return regionExists || otherExists;
       });
-
-      const isTopAd = (ad: TAdItem) => topOfferIDs.has(offerIDOf(ad));
 
       const ordered = filtered.sort((a, b) => {
         // Top ads lead "Neueste zuerst", newest first among themselves. Picking
@@ -268,6 +267,7 @@ const ListControlProvider = ({ children }: ListControlProviderProps) => {
         conditions,
         limit,
         setSortingKey,
+        isTopAd,
         addFilter,
         setConditions,
         showMore: ads.length >= limit ? showMore : undefined,

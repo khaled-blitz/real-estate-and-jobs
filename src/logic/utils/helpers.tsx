@@ -8,7 +8,7 @@ import type { BlitzData as BlitzDataType } from "blitzdata.ts";
 const loadBlitzData = async (): Promise<typeof BlitzDataType> =>
   (await import("blitzdata.ts")).BlitzData;
 import { ENV } from "./constants";
-import { ImageType } from "@/dto/ad-item";
+import { ImageType, TOffer } from "@/dto/ad-item";
 
 /**
  * Returns true if the given URL is valid, false otherwise
@@ -80,6 +80,25 @@ export const getBDModel = async (modelName: string) => {
 
 export const getImageURL = (image: ImageType | undefined) => {
   return `${image?.base}${image?.oq}`;
+};
+
+/**
+ * A Top placement is something the advertiser paid for: an offer marked top
+ * but given away for free buys no position.
+ *
+ * This is the whole definition of Top for real estate — there is no Top flag
+ * on the ad. It decides the badge in the offer picker, the badge on an ad card
+ * and the order of the list, so it lives in one place rather than three.
+ *
+ * A boolean arrives as "1", 1 or true depending on the read path.
+ */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const isPaidTopOffer = (offer: TOffer | Record<string, any> | undefined | null) => {
+  if (!offer) return false;
+  const top = offer.top;
+  return (
+    (top === "1" || top === 1 || top === true) && Number(offer.price) > 0
+  );
 };
 
 export const isValidPrice = (price: string | undefined) => {
