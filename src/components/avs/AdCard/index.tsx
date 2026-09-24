@@ -23,13 +23,7 @@ const AdCard = ({ ad, isAdmin = false }: { ad: TAdItem; isAdmin: boolean }) => {
   };
 
   return (
-    <div className="w-full relative">
-      {/* Says why this ad is at the front. The rule lives in ListControl. */}
-      {context.isTopAd(ad) && (
-        <span className="absolute top-0 left-0 z-10 bg-[#444444] text-white text-md md:text-lg px-2 py-1">
-          Top
-        </span>
-      )}
+    <div className="w-full">
       <Card
         className={classNames("overflow-hidden w-full border-0")}
         styles={{
@@ -47,7 +41,7 @@ const AdCard = ({ ad, isAdmin = false }: { ad: TAdItem; isAdmin: boolean }) => {
         <div className="flex flex-col md:flex-row w-full">
           <Thumbnail ad={ad} />
           <div className="flex flex-col w-full justify-start">
-            <Header ad={ad} />
+            <Header ad={ad} isTop={context.isTopAd(ad)} />
           </div>
         </div>
         {isAdmin && (
