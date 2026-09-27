@@ -13,7 +13,7 @@ const PriceMax = () => {
           <Input
             type="number"
             placeholder="CHF"
-            value={form.getFieldValue("areaMin")}
+            value={form.getFieldValue("priceMax")}
           />
         </div>
       </Form.Item>
