@@ -3,20 +3,15 @@ import { Form, Input, Typography } from "antd";
 
 const PriceMin = () => {
   const { translate } = useLocalization();
-  const form = Form.useFormInstance();
 
   return (
     <div className="flex w-full items-end max-w-full">
-      <Form.Item name="priceMin" label={null} className="!m-0 w-full">
-        <div className="flex flex-col gap-2">
-          <Typography.Text>{translate("Price min")}</Typography.Text>
-          <Input
-            type="number"
-            placeholder="Fr."
-            value={form.getFieldValue("areaMin")}
-          />
-        </div>
-      </Form.Item>
+      <div className="flex flex-col gap-2 w-full">
+        <Typography.Text>{translate("Price min")}</Typography.Text>
+        <Form.Item name="priceMin" label={null} className="!m-0">
+          <Input type="number" placeholder="Fr." />
+        </Form.Item>
+      </div>
     </div>
   );
 };
