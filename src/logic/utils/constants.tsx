@@ -11,4 +11,6 @@ export const ENV = {
 
 export const AdFusionModelName = "bdt24qme4c3_real_estate_v4";
 
+export const OfferModelName = "bdt24qme4c3_real_estate_offer";
+
 export const PREMIUM_PLAN = true;

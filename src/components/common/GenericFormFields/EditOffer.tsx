@@ -2,6 +2,7 @@
 import { Button, Form } from "antd";
 import { InputType } from "@/logic/listControl/Attributes/props";
 import { useLocalization } from "@/logic/localization";
+import { isPaidTopOffer } from "@/logic/utils/helpers";
 
 interface Props {
   input: Record<string, any>;
@@ -53,7 +54,7 @@ const EditOffer = ({ input, list, onChange }: Props) => {
             return (
               <Button
                 key={option._blitzID}
-                className={`p-4 cursor-pointer text-center ${cardStyle} w-full max-w-[200px] h-[200px] items-center justify-center flex flex-col`}
+                className={`relative p-4 cursor-pointer text-center ${cardStyle} w-full max-w-[200px] h-[200px] items-center justify-center flex flex-col`}
                 onClick={() => {
                   // Update the input and Form value
                   const updatedInput = {
@@ -64,6 +65,12 @@ const EditOffer = ({ input, list, onChange }: Props) => {
                   form.setFieldsValue({ [item.key]: option._blitzID });
                 }}
               >
+                {/* The buyer should see which offer is the one that leads the list. */}
+                {isPaidTopOffer(option) && (
+                  <span className="absolute top-0 left-0 bg-[#444444] text-white text-xs font-bold px-2 py-[2px] rounded-br-[8px]">
+                    Top
+                  </span>
+                )}
                 <div className="font-bold text-md">
                   {translate(option.name)}
                 </div>

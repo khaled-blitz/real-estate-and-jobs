@@ -48,7 +48,7 @@ const AdCard = ({ ad, isAdmin = false }: { ad: TAdItem; isAdmin: boolean }) => {
         <div className="flex flex-col md:flex-row gsap-2 w-full">
           <Thumbnail ad={ad} />
           <div className="flex flex-col w-full justify-start">
-            <Header ad={ad} />
+            <Header ad={ad} isTop={context.isTopAd(ad)} />
             <Footer ad={ad} />
           </div>
         </div>

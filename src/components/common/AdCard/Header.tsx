@@ -7,6 +7,7 @@ import { isValidPrice } from "@/logic/utils/helpers";
 
 interface Props {
   ad: TAdItem;
+  isTop?: boolean;
 }
 
 const isHTML = (str: string) => {
@@ -26,10 +27,17 @@ const RenderContent = ({ content }: { content: string }) => {
   );
 };
 
-export default function Header({ ad }: Props) {
+export default function Header({ ad, isTop = false }: Props) {
   const { translate } = useLocalization();
   return (
     <div className="flex flex-col gap-3 md:gap-2 p-4 pt-2 w-full justify-start h-full">
+      {/* In the flow, not over it: the price pill owns the top right, and an
+          absolute badge here would cover the first line of the card. */}
+      {isTop && (
+        <span className="self-start bg-[#444444] text-white text-sm font-bold px-3 py-1 rounded-[4px] leading-none">
+          Top
+        </span>
+      )}
       {/* Number of rooms and price */}
       <div className="flex justify-between items-center">
         <div className="flex items-center gap-4">

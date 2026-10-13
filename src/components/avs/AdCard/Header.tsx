@@ -8,6 +8,7 @@ import { CategorySearchingMap } from "@/logic/utils/helpers";
 
 interface Props {
   ad: TAdItem;
+  isTop?: boolean;
 }
 
 const isHTML = (str: string) => {
@@ -27,7 +28,7 @@ const RenderContent = ({ content }: { content: string }) => {
   );
 };
 
-export default function Header({ ad }: Props) {
+export default function Header({ ad, isTop = false }: Props) {
   const { translate } = useLocalization();
   return (
     <div
@@ -36,6 +37,13 @@ export default function Header({ ad }: Props) {
         { "min-h-[240px]": ad.logo }
       )}
     >
+      {/* In the flow, not over it: the subcategory badge owns the top right,
+          and an absolute badge here would cover the property type. */}
+      {isTop && (
+        <span className="self-start bg-[#444444] text-white text-md md:text-lg px-2 py-1 leading-none">
+          Top
+        </span>
+      )}
       {ad.subcategory && (
         <div className="absolute top-4 right-0 bg-[#444444] text-white text-md md:text-lg px-2 py-1">
           {CategorySearchingMap[
