@@ -37,18 +37,22 @@ export default function Header({ ad, isTop = false }: Props) {
         { "min-h-[240px]": ad.logo }
       )}
     >
-      {/* In the flow, not over it: the subcategory badge owns the top right,
-          and an absolute badge here would cover the property type. */}
-      {isTop && (
-        <span className="self-start bg-[#444444] text-white text-md md:text-lg px-2 py-1 leading-none">
-          Top
-        </span>
-      )}
-      {ad.subcategory && (
-        <div className="absolute top-4 right-0 bg-[#444444] text-white text-md md:text-lg px-2 py-1">
-          {CategorySearchingMap[
-            ad.subcategory as keyof typeof CategorySearchingMap
-          ] || translate(ad.subcategory)}
+      {/* The Top badge stacks under the subcategory badge, or takes the
+          corner itself when there is no subcategory. */}
+      {(ad.subcategory || isTop) && (
+        <div className="absolute top-4 right-0 flex flex-col items-end gap-1">
+          {ad.subcategory && (
+            <div className="bg-[#444444] text-white text-md md:text-lg px-2 py-1">
+              {CategorySearchingMap[
+                ad.subcategory as keyof typeof CategorySearchingMap
+              ] || translate(ad.subcategory)}
+            </div>
+          )}
+          {isTop && (
+            <div className="bg-[#444444] text-white text-md md:text-lg px-2 py-1">
+              Top
+            </div>
+          )}
         </div>
       )}
       {ad.property_type && (
@@ -85,6 +89,9 @@ export default function Header({ ad, isTop = false }: Props) {
           "md:max-w-[calc(100%-100px)]": ["TS", "TR"].includes(
             ad.subcategory || ""
           ),
+          "md:max-w-[calc(100%-60px)]":
+            isTop &&
+            !["STS", "STR", "TS", "TR"].includes(ad.subcategory || ""),
         })}
       >
         {ad.title && (
